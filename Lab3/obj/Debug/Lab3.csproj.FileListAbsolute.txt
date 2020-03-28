@@ -1,0 +1,15 @@
+D:\dont touch (2)\prn292\Lab3\obj\Debug\Lab3.csprojAssemblyReference.cache
+D:\dont touch (2)\prn292\Lab3\obj\Debug\Lab3.Properties.Resources.resources
+D:\dont touch (2)\prn292\Lab3\obj\Debug\Lab3.csproj.GenerateResource.cache
+D:\dont touch (2)\prn292\Lab3\bin\Debug\Lab3.exe
+D:\dont touch (2)\prn292\Lab3\bin\Debug\Lab3.pdb
+D:\dont touch (2)\prn292\Lab3\bin\Debug\Library.dll
+D:\dont touch (2)\prn292\Lab3\bin\Debug\Library.pdb
+D:\dont touch (2)\prn292\Lab3\obj\Debug\Lab3.csproj.CopyComplete
+D:\dont touch (2)\prn292\Lab3\obj\Debug\Lab3.exe
+D:\dont touch (2)\prn292\Lab3\obj\Debug\Lab3.pdb
+D:\dont touch (2)\prn292\Lab3\obj\Debug\Lab3.Lab3.resources
+D:\dont touch (2)\prn292\Lab3\bin\Debug\Lab3.exe.config
+D:\dont touch (2)\prn292\Lab3\obj\Debug\Lab3.wtf.resources
+D:\dont touch (2)\prn292\Lab3\obj\Debug\Lab3.NotableGames.resources
+D:\dont touch (2)\prn292\Lab3\obj\Debug\Lab3.csproj.CoreCompileInputs.cache

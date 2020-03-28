@@ -1,0 +1,10 @@
+D:\dont touch (2)\prn292\Lab4\bin\Lab4.dll.config
+D:\dont touch (2)\prn292\Lab4\bin\Lab4.dll
+D:\dont touch (2)\prn292\Lab4\bin\Lab4.pdb
+D:\dont touch (2)\prn292\Lab4\obj\Debug\Lab4.csprojAssemblyReference.cache
+D:\dont touch (2)\prn292\Lab4\obj\Debug\Lab4.dll
+D:\dont touch (2)\prn292\Lab4\obj\Debug\Lab4.pdb
+D:\dont touch (2)\prn292\Lab4\bin\Library.dll
+D:\dont touch (2)\prn292\Lab4\bin\Library.pdb
+D:\dont touch (2)\prn292\Lab4\obj\Debug\Lab4.csproj.CopyComplete
+D:\dont touch (2)\prn292\Lab4\obj\Debug\Lab4.csproj.CoreCompileInputs.cache
