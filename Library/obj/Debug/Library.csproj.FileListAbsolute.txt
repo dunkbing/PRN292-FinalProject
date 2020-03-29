@@ -4,3 +4,9 @@ D:\dont touch (2)\prn292\Library\obj\Debug\Library.csprojAssemblyReference.cache
 D:\dont touch (2)\prn292\Library\obj\Debug\Library.dll
 D:\dont touch (2)\prn292\Library\obj\Debug\Library.pdb
 D:\dont touch (2)\prn292\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+D:\dont touch (2)\prn292\final-project\Library\bin\Debug\Library.dll
+D:\dont touch (2)\prn292\final-project\Library\bin\Debug\Library.pdb
+D:\dont touch (2)\prn292\final-project\Library\obj\Debug\Library.csprojAssemblyReference.cache
+D:\dont touch (2)\prn292\final-project\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+D:\dont touch (2)\prn292\final-project\Library\obj\Debug\Library.dll
+D:\dont touch (2)\prn292\final-project\Library\obj\Debug\Library.pdb

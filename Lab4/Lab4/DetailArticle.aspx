@@ -41,52 +41,72 @@
                         <asp:Button runat="server" ID="upvote" Text="upvote" CssClass="btn btn-primary mb-1" OnClick="upvote_Click" />
                         <asp:Button runat="server" ID="downvote" Text="downvote" CssClass="btn btn-primary mb-1" OnClick="downvote_Click" />
                         <asp:TextBox runat="server" TextMode="MultiLine" ID="comment" CssClass="form-control mb-1" />
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="comment" ErrorMessage="pls write sth" /><br />
                         <asp:Button runat="server" ID="submitcmt" Text="comment" CssClass="btn btn-primary" OnClick="submitcmt_Click" />
+                        <asp:GridView ID="commentGrid" BorderStyle="None" CssClass="table-responsive" Width="100%" GridLines="None" runat="server" AutoGenerateColumns="False" ShowHeader="False">
+                            <Columns>
+                                <asp:BoundField DataField="ParentCommentID" Visible="false" HeaderText="ParentCommentID" />
+                                <asp:TemplateField HeaderText="ParentMessage">
+                                    <ItemTemplate>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <table>
+                                                        <tr>
+                                                            <td style="width: 55px; vertical-align: top; padding-top: 10px">
+                                                                <asp:Label ID="lblParentDate" runat="server" Text='<%#Bind("Time") %>'></asp:Label>
+                                                                <br />
+                                                                <asp:Label ID="Label4" Font-Bold="true" ForeColor="#cc0066" runat="server" Text='<%# Bind("username") %>'></asp:Label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("content") %>'></asp:Label></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:Label ID="cmtIdLb" runat="server" Visible="false" Text='<%#Eval("id") %>'></asp:Label>
+                                                                <a class="link" id='lnkReplyParent<%#Eval("id") %>' href="javascript:void(0)" onclick="showReply(<%#Eval("id") %>);return false;">Reply</a>&nbsp;
+                                        <a class="link" id="lnkCancle" href="javascript:void(0)" onclick="closeReply(<%#Eval("id") %>);return false;">Cancel</a>
+                                                                <div id='divReply<%#Eval("id") %>' style="display: none; margin-top: 5px;">
+                                                                    <asp:TextBox ID="replyTb" CssClass="input-group" runat="server" Width="400px" TextMode="MultiLine"></asp:TextBox>
+                                                                    <br />
+                                                                    <asp:Button ID="btnReply" runat="server" Text="Reply" CssClass="btn btn-primary" OnClick="btnReply_Click" />
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-left: 100px; border-bottom: 1px solid #4cff00;">
+                                                                <br />
+                                                                <asp:GridView ID="replyGridview" BorderStyle="None" GridLines="None" runat="server" AutoGenerateColumns="False" DataSource='<%# Bind("replies") %>' ShowHeader="False">
+                                                                    <Columns>
+                                                                        <asp:TemplateField HeaderText="UserName">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblChildDate" runat="server" Text='<%#Bind("time") %>'></asp:Label>
+                                                                                <br />
+                                                                                <asp:Label ID="Label2" runat="server" Font-Bold="true" ForeColor="#ff0066" Text='<%#Bind("UserName") %>'></asp:Label>
+                                                                                <br />
+                                                                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("content") %>'></asp:Label>
+                                                                                <hr />
+                                                                            </ItemTemplate>
+                                                                        </asp:TemplateField>
+                                                                    </Columns>
+                                                                </asp:GridView>
+                                                                <br />
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
                     </form>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid" />
-                                    <p class="text-secondary text-center">15 Minutes Ago</p>
-                                </div>
-                                <div class="col-md-10">
-                                    <p>
-                                        <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Maniruzzaman Akash</strong></a>
-                                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-
-                                    </p>
-                                    <div class="clearfix"></div>
-                                    <p>Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                    <p>
-                                        <a class="float-right btn btn-outline-primary ml-2"><i class="fa fa-reply"></i>Reply</a>
-                                        <a class="float-right btn text-white btn-danger"><i class="fa fa-heart"></i>Like</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="card card-inner">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-2">
-                                            <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid" />
-                                            <p class="text-secondary text-center">15 Minutes Ago</p>
-                                        </div>
-                                        <div class="col-md-10">
-                                            <p><a href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Maniruzzaman Akash</strong></a></p>
-                                            <p>Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                            <p>
-                                                <a class="float-right btn btn-outline-primary ml-2"><i class="fa fa-reply"></i>Reply</a>
-                                                <a class="float-right btn text-white btn-danger"><i class="fa fa-heart"></i>Like</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <br />
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetAllDepartmentsandEmployee" TypeName="ParentCommentIDAcess"></asp:ObjectDataSource>
+                    <br />
                 </div>
                 <div class="col-4">
                     <asp:Label runat="server" ID="vote" CssClass="text-info" />
@@ -97,5 +117,13 @@
         <div class="col-1"></div>
     </div>
     <script src="../bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <script>
+        function showReply(n) {
+            document.getElementById("divReply" + n).style.display = "block";
+        }
+        function closeReply(n) {
+            document.getElementById("divReply" + n).style.display = "none";
+        }
+    </script>
 </body>
 </html>

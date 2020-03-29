@@ -61,5 +61,27 @@ namespace Library.DAO {
             down.Value = !type;
             Dao.ExecuteSqlWithParams(sql, user, id, up, down);
         }
+
+        public static void Comment(string username, string content, int postid) {
+            string sql = "insert into comment values(@user, @content, @pid, getdate())";
+            SqlParameter user = new SqlParameter("@user", SqlDbType.VarChar);
+            user.Value = username;
+            SqlParameter cont = new SqlParameter("@content", SqlDbType.VarChar);
+            cont.Value = content;
+            SqlParameter pid = new SqlParameter("@pid", SqlDbType.Int);
+            pid.Value = postid;
+            Dao.ExecuteSqlWithParams(sql, user, cont, pid);
+        }
+
+        public static void Reply(int cmtid, string content, string username) {
+            string sql = "insert into reply values(@cid, @cont, @user, getdate())";
+            SqlParameter cid = new SqlParameter("@cid", SqlDbType.Int);
+            cid.Value = cmtid;
+            SqlParameter cont = new SqlParameter("@cont", SqlDbType.VarChar);
+            cont.Value = content;
+            SqlParameter user = new SqlParameter("@user", SqlDbType.VarChar);
+            user.Value = username;
+            Dao.ExecuteSqlWithParams(sql, cid, cont, user);
+        }
     }
 }

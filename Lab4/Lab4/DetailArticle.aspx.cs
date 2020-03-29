@@ -17,7 +17,7 @@ namespace Lab4.Lab4 {
                 id = Convert.ToInt32(Request.QueryString.Get("id"));
                 ArticleDao.UpdateViews(id);
                 LoadCurrentAccount();
-                LoadData();
+                LoadData();   
             } catch (Exception) {
                 Response.Redirect("Home.aspx");
             }
@@ -30,6 +30,8 @@ namespace Lab4.Lab4 {
             content.Text = article.Content;
             image.ImageUrl = article.ImageUrl;
             vote.Text = "Views: " + article.View + " | Upvotes: " + ArticleDao.Upvotes(id);
+            commentGrid.DataSource = CommentDao.GetComments(id);
+            commentGrid.DataBind();
         }
 
         public void LoadCurrentAccount() {
@@ -81,7 +83,16 @@ namespace Lab4.Lab4 {
         }
 
         protected void submitcmt_Click(object sender, EventArgs e) {
+            AccountDao.Comment(currAcc.Username, comment.Text, id);
+            LoadData();
+        }
 
+        protected void btnReply_Click(object sender, EventArgs e) {
+            GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
+            Label cmtIdLb = (Label)row.FindControl("cmtIdLb");
+            TextBox replyContent = (TextBox)row.FindControl("replyTb");
+            AccountDao.Reply(Convert.ToInt32(cmtIdLb.Text), replyContent.Text, currAcc.Username);
+            LoadData();
         }
     }
 }

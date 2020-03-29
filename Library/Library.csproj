@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDao.cs" />
+    <Compile Include="DAO\CommentDao.cs" />
     <Compile Include="DAO\Dao.cs" />
     <Compile Include="DAO\DeveloperDao.cs" />
     <Compile Include="DAO\GamesDao.cs" />
@@ -54,9 +55,11 @@
     <Compile Include="Entity\Bullet.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Entity\Comment.cs" />
     <Compile Include="Entity\Developer.cs" />
     <Compile Include="Entity\Games.cs" />
     <Compile Include="Entity\Article.cs" />
+    <Compile Include="Entity\Reply.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
