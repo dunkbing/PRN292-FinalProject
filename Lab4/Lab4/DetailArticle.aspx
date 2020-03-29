@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DetailArticle.aspx.cs" Inherits="Lab4.Lab4.DetailArticle" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DetailArticle.aspx.cs" Inherits="Lab4.Lab4.DetailArticle" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -40,8 +40,7 @@
                     <form runat="server">
                         <asp:Button runat="server" ID="upvote" Text="upvote" CssClass="btn btn-primary mb-1" OnClick="upvote_Click" />
                         <asp:Button runat="server" ID="downvote" Text="downvote" CssClass="btn btn-primary mb-1" OnClick="downvote_Click" />
-                        <asp:TextBox runat="server" TextMode="MultiLine" ID="comment" CssClass="form-control mb-1" />
-                        <asp:RequiredFieldValidator runat="server" ControlToValidate="comment" ErrorMessage="pls write sth" /><br />
+                        <asp:TextBox runat="server" TextMode="MultiLine" ID="comment" CssClass="form-control mb-1" /><br />
                         <asp:Button runat="server" ID="submitcmt" Text="comment" CssClass="btn btn-primary" OnClick="submitcmt_Click" />
                         <asp:GridView ID="commentGrid" BorderStyle="None" CssClass="table-responsive" Width="100%" GridLines="None" runat="server" AutoGenerateColumns="False" ShowHeader="False">
                             <Columns>
@@ -60,14 +59,13 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td>
-                                                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("content") %>'></asp:Label></td>
+                                                            <td><asp:Label ID="Label1" runat="server" Text='<%# Bind("content") %>'></asp:Label></td>
                                                         </tr>
                                                         <tr>
                                                             <td>
                                                                 <asp:Label ID="cmtIdLb" runat="server" Visible="false" Text='<%#Eval("id") %>'></asp:Label>
                                                                 <a class="link" id='lnkReplyParent<%#Eval("id") %>' href="javascript:void(0)" onclick="showReply(<%#Eval("id") %>);return false;">Reply</a>&nbsp;
-                                        <a class="link" id="lnkCancle" href="javascript:void(0)" onclick="closeReply(<%#Eval("id") %>);return false;">Cancel</a>
+                                                                <a class="link" id="lnkCancle" href="javascript:void(0)" onclick="closeReply(<%#Eval("id") %>);return false;">Cancel</a>
                                                                 <div id='divReply<%#Eval("id") %>' style="display: none; margin-top: 5px;">
                                                                     <asp:TextBox ID="replyTb" CssClass="input-group" runat="server" Width="400px" TextMode="MultiLine"></asp:TextBox>
                                                                     <br />
@@ -105,14 +103,11 @@
                         </asp:GridView>
                     </form>
                     <br />
-                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetAllDepartmentsandEmployee" TypeName="ParentCommentIDAcess"></asp:ObjectDataSource>
-                    <br />
                 </div>
                 <div class="col-4">
                     <asp:Label runat="server" ID="vote" CssClass="text-info" />
                 </div>
             </div>
-
         </div>
         <div class="col-1"></div>
     </div>

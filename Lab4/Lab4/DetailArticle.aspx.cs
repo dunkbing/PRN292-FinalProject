@@ -13,11 +13,11 @@ namespace Lab4.Lab4 {
         public Article article;
         Account currAcc;
         protected void Page_Load(object sender, EventArgs e) {
+            LoadCurrentAccount();
             try {
                 id = Convert.ToInt32(Request.QueryString.Get("id"));
                 ArticleDao.UpdateViews(id);
-                LoadCurrentAccount();
-                LoadData();   
+                LoadData();
             } catch (Exception) {
                 Response.Redirect("Home.aspx");
             }
@@ -83,7 +83,7 @@ namespace Lab4.Lab4 {
         }
 
         protected void submitcmt_Click(object sender, EventArgs e) {
-            AccountDao.Comment(currAcc.Username, comment.Text, id);
+            if(!comment.Text.Equals(string.Empty)) AccountDao.Comment(currAcc.Username, comment.Text, id);
             LoadData();
         }
 
@@ -91,8 +91,17 @@ namespace Lab4.Lab4 {
             GridViewRow row = (sender as Button).NamingContainer as GridViewRow;
             Label cmtIdLb = (Label)row.FindControl("cmtIdLb");
             TextBox replyContent = (TextBox)row.FindControl("replyTb");
-            AccountDao.Reply(Convert.ToInt32(cmtIdLb.Text), replyContent.Text, currAcc.Username);
+            if(!replyContent.Text.Equals(string.Empty)) AccountDao.Reply(Convert.ToInt32(cmtIdLb.Text), replyContent.Text, currAcc.Username);
             LoadData();
+        }
+
+        protected void linkBtnReply_Click(object sender, EventArgs e) {
+            GridViewRow row = (sender as LinkButton).NamingContainer as GridViewRow;
+            Label cmtIdLb = (Label)row.FindControl("cmtIdLb");
+            TextBox replyContent = (TextBox)row.FindControl("replyTb");
+            if (!replyContent.Text.Equals(string.Empty)) 
+                AccountDao.Reply(Convert.ToInt32(cmtIdLb.Text), replyContent.Text, currAcc.Username);
+            //LoadData();
         }
     }
 }
