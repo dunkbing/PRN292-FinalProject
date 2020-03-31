@@ -16,7 +16,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Forums <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#">Create post <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Link</a>
@@ -74,7 +74,7 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td style="padding-left: 100px; border-bottom: 1px solid #4cff00;">
+                                                            <td style="padding-left: 100px; border-bottom: 1px solid #9fe3b1;">
                                                                 <br />
                                                                 <asp:GridView ID="replyGridview" BorderStyle="None" GridLines="None" runat="server" AutoGenerateColumns="False" DataSource='<%# Bind("replies") %>' ShowHeader="False">
                                                                     <Columns>

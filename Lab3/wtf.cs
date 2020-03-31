@@ -98,7 +98,7 @@ namespace Lab3 {
                 }
                 if (item is PictureBox && item.Tag.ToString() == "monster") {
                     if (((PictureBox)item).Bounds.IntersectsWith(player.Bounds)) {
-                        playerHealth -= 0;
+                        playerHealth -= 1;
                     }
                     if (((PictureBox)item).Left > player.Left) {
                         ((PictureBox)item).Left -= zombieSpeed;

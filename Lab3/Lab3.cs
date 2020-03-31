@@ -134,6 +134,7 @@ namespace Lab3 {
                 int row = DeveloperDao.Update(currentDev);
                 MessageBox.Show(row + "row(s) affected");
                 LoadData();
+                ResetField();
             }
         }
     }

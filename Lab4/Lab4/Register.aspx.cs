@@ -20,8 +20,8 @@ namespace Lab4.Lab4 {
                 try {
                     int row = AccountDao.Register(account);
                     notify.Text = row > 0 ? "register successfully" : "failed to register";
-                } catch (SqlException) {
-                    notify.Text = "username duplicated";
+                } catch (SqlException ex) {
+                    notify.Text = ex.Message;
                 }
                 
             }

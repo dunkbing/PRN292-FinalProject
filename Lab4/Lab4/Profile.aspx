@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Lab4.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Lab4.Lab4.Profile" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Home</title>
+    <title><%=username %></title>
     <link href="../bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -29,15 +29,8 @@
                     <asp:HyperLink runat="server" ID="register" CssClass="nav-link" />
                 </div>
             </nav>
-            <div class="d-flex">
+            <div class="d-flex mt-3">
                 <div class="col-8">
-                    <form runat="server">
-                        <asp:Label runat="server" CssClass="text-primary" ID="createPostLb">Create post</asp:Label><br />
-                        <asp:TextBox runat="server" ID="postTitle" CssClass="form-control mb-1"/>
-                        <asp:TextBox runat="server" TextMode="MultiLine" ID="writePost" CssClass="form-control mb-1" />
-                        <asp:FileUpload runat="server" ID="imgTitle" />
-                        <asp:Button runat="server" ID="submitPost" Text="Post" CssClass="btn btn-primary mb-4" OnClick="submitPost_Click" />
-                    </form>
                     <asp:Repeater runat="server" ID="postRepeater">
                         <ItemTemplate>
                             <div class="card mb-3">
@@ -60,33 +53,26 @@
                     </asp:Repeater>
                 </div>
                 <div class="col-4">
-                    <h3 class="modal-title">Most popular games</h3>
-                    <asp:Repeater runat="server" ID="mostPopularGames">
-                        <ItemTemplate>
-                            <div class="card mb-3">
-                                <div class="row no-gutters">
-                                    <div class="col-md-6">
-                                        <img src="<%#DataBinder.Eval(Container.DataItem, "ImageUrl") %>" class="card-img" alt="...">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card-body">
-                                            <h5 class="card-title"><%# DataBinder.Eval(Container.DataItem, "Title") %></h5>
-                                            <p class="card-text"><small class="text-muted">Score: <%#DataBinder.Eval(Container.DataItem, "Score") %></small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                    <img src="<%=a.Avatar %>" alt="" class="img-rounded img-fluid" />
+                    <div class="col-md-6 details">
+                        <blockquote>
+                            <h5><%=a.Username %></h5>
+                            <small><cite title="Source Title">Chicago, United States of America  <i class="icon-map-marker"></i></cite></small>
+                        </blockquote>
+                        <p>
+                            <%=a.Email %>
+                            <br />
+                            www.bootsnipp.com
+                            <br />
+                            June 18, 1990
+                        </p>
+                    </div>
                 </div>
             </div>
             <nav class="pagination"><%= pager(4) %></nav>
         </div>
         <div class="col-1"></div>
+        <script src="../bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
     </div>
-    <script src="../bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
-    <script>
-        document.getElementById("postTitle").placeholder = "title";
-    </script>
 </body>
 </html>

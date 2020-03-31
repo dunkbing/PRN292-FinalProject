@@ -82,6 +82,7 @@
     <Content Include="bootstrap-4.4.1-dist\js\bootstrap.js" />
     <Content Include="bootstrap-4.4.1-dist\js\bootstrap.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="Lab4\CreatePost.aspx" />
     <Content Include="Lab4\DetailArticle.aspx" />
     <Content Include="Lab4\Home.aspx" />
     <Content Include="images\post1.jpg" />
@@ -91,12 +92,20 @@
     <Content Include="Lab4\Login.aspx" />
     <Content Include="Lab4\Logout.aspx" />
     <Content Include="Lab4\Navbar.aspx" />
+    <Content Include="Lab4\Profile.aspx" />
     <Content Include="Lab4\Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Lab4\CreatePost.aspx.cs">
+      <DependentUpon>CreatePost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lab4\CreatePost.aspx.designer.cs">
+      <DependentUpon>CreatePost.aspx</DependentUpon>
     </Compile>
     <Compile Include="Lab4\DetailArticle.aspx.cs">
       <DependentUpon>DetailArticle.aspx</DependentUpon>
@@ -132,6 +141,13 @@
     </Compile>
     <Compile Include="Lab4\Navbar.aspx.designer.cs">
       <DependentUpon>Navbar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lab4\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lab4\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Lab4\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

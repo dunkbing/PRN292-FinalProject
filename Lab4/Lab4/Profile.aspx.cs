@@ -7,44 +7,30 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Lab4 {
-    public partial class Home : System.Web.UI.Page, ILoad {
-        List<Article> articles;
+namespace Lab4.Lab4 {
+    public partial class Profile : System.Web.UI.Page, ILoad {
+        public string username;
+        public Account a;
         string index;
-        Account currAcc;
-        protected void Page_Load(object sender, EventArgs e) {
-            LoadData();
-            LoadCurrentAccount();
+        List<Article> articles;
+
+        public void LoadCurrentAccount() {
+            username = Request.QueryString.Get("username");
+            a = AccountDao.GetAccount(username);
         }
+
         public void LoadData() {
             index = Request.QueryString.Get("index");
             int i;
             try { i = index != null ? Convert.ToInt32(index) : 1; } catch (FormatException) { i = 1; }
-            articles = ArticleDao.PostsPaginate(i, 4);
+            articles = AccountDao.GetArticlesByUsername(username, 1, 4);
             postRepeater.DataSource = articles;
             postRepeater.DataBind();
-            mostPopularGames.DataSource = GamesDao.MostPopularGames();
-            mostPopularGames.DataBind();
         }
 
-        public void LoadCurrentAccount() {
-            currAcc = (Account)Session["currentAccount"];
-            if (currAcc != null) {
-                currentAccount.Text = currAcc.Username;
-                currentAccount.NavigateUrl = "Profile.aspx?username="+currAcc.Username;
-                register.Text = "Logout";
-                register.NavigateUrl = "Logout.aspx";
-            } else {
-                currentAccount.Text = "Login";
-                currentAccount.NavigateUrl = "Login.aspx";
-                register.Text = "Register";
-                register.NavigateUrl = "Register.aspx";
-                createPostLb.Visible = false;
-                postTitle.Visible = false;
-                writePost.Visible = false;
-                submitPost.Visible = false;
-                imgTitle.Visible = false;
-            }
+        protected void Page_Load(object sender, EventArgs e) {
+            LoadCurrentAccount();
+            LoadData();
         }
 
         public String HyperLink(string label, string href) {
@@ -75,16 +61,6 @@ namespace Lab4 {
                 result += HyperLink("Last", "Home.aspx?index=" + pagecount);
             }
             return result;
-        }
-
-        protected void submitPost_Click(object sender, EventArgs e) {
-            string fileName = "../images/default-avatar.png";
-            if (imgTitle.HasFile) {
-                fileName = imgTitle.FileName.ToString();
-                imgTitle.PostedFile.SaveAs(Server.MapPath("~/images/") + fileName);
-            }
-            AccountDao.CreatePost(postTitle.Text, writePost.Text, currAcc.Username, "../images/"+fileName);
-            LoadData();
         }
     }
 }
