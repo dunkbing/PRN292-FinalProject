@@ -10,3 +10,9 @@ D:\dont touch (2)\prn292\final-project\Library\obj\Debug\Library.csprojAssemblyR
 D:\dont touch (2)\prn292\final-project\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 D:\dont touch (2)\prn292\final-project\Library\obj\Debug\Library.dll
 D:\dont touch (2)\prn292\final-project\Library\obj\Debug\Library.pdb
+D:\Github\C#\PRN292-FinalProject\Library\bin\Debug\Library.dll
+D:\Github\C#\PRN292-FinalProject\Library\bin\Debug\Library.pdb
+D:\Github\C#\PRN292-FinalProject\Library\obj\Debug\Library.csprojAssemblyReference.cache
+D:\Github\C#\PRN292-FinalProject\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+D:\Github\C#\PRN292-FinalProject\Library\obj\Debug\Library.dll
+D:\Github\C#\PRN292-FinalProject\Library\obj\Debug\Library.pdb

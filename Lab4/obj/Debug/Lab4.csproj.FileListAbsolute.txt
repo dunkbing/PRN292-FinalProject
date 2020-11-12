@@ -18,3 +18,13 @@ D:\dont touch (2)\prn292\final-project\Lab4\obj\Debug\Lab4.csproj.CoreCompileInp
 D:\dont touch (2)\prn292\final-project\Lab4\obj\Debug\Lab4.csproj.CopyComplete
 D:\dont touch (2)\prn292\final-project\Lab4\obj\Debug\Lab4.dll
 D:\dont touch (2)\prn292\final-project\Lab4\obj\Debug\Lab4.pdb
+D:\Github\C#\PRN292-FinalProject\Lab4\bin\Lab4.dll.config
+D:\Github\C#\PRN292-FinalProject\Lab4\bin\Lab4.dll
+D:\Github\C#\PRN292-FinalProject\Lab4\bin\Lab4.pdb
+D:\Github\C#\PRN292-FinalProject\Lab4\bin\Library.dll
+D:\Github\C#\PRN292-FinalProject\Lab4\bin\Library.pdb
+D:\Github\C#\PRN292-FinalProject\Lab4\obj\Debug\Lab4.csprojAssemblyReference.cache
+D:\Github\C#\PRN292-FinalProject\Lab4\obj\Debug\Lab4.csproj.CoreCompileInputs.cache
+D:\Github\C#\PRN292-FinalProject\Lab4\obj\Debug\Lab4.csproj.CopyComplete
+D:\Github\C#\PRN292-FinalProject\Lab4\obj\Debug\Lab4.dll
+D:\Github\C#\PRN292-FinalProject\Lab4\obj\Debug\Lab4.pdb
